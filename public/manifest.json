@@ -1,17 +1,42 @@
 {
-   "name": "Three.js Editor",
-   "short_name": "Three.js",
-   "theme_color": "#ffffff",
-   "background_color": "#004740",
+   "name": "Next.JS Three.js Editor",
+   "short_name": "Three.js Editor",
+   "theme_color": "#111",
+   "background_color": "#111",
    "display": "fullscreen",
    "orientation": "portrait",
    "scope": "/",
    "start_url": "/",
    "icons": [
       {
-         "src": "images/icon.png",
-         "type": "image/png",
-         "sizes": "144x144"
+         "src": "icons/icon-72x72.png",
+         "sizes": "72x72",
+         "type": "image/png"
+      },
+      {
+         "src": "icons/icon-96x96.png",
+         "sizes": "96x96",
+         "type": "image/png"
+      },
+      {
+         "src": "icons/icon-144x144.png",
+         "sizes": "144x144",
+         "type": "image/png"
+      },
+      {
+         "src": "icons/icon-192x192.png",
+         "sizes": "192x192",
+         "type": "image/png"
+      },
+      {
+         "src": "icons/icon-310x310.png",
+         "sizes": "310x310",
+         "type": "image/png"
+      },
+      {
+         "src": "icons/icon-512x512.png",
+         "sizes": "512x512",
+         "type": "image/png"
       }
    ],
    "splash_pages": null

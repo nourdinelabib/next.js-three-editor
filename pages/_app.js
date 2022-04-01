@@ -21,10 +21,22 @@ function MyApp({ Component, pageProps }) {
             />
             <meta name="description" content="Description" />
             <meta name="keywords" content="Keywords" />
-            <title>Three.js Editor</title>
+            <title>Next.JS Three.js Editor</title>
 
             <link rel="manifest" href="/manifest.json" />
-
+            <link
+               href="/icons/favicon-16x16.png"
+               rel="icon"
+               type="image/png"
+               sizes="16x16"
+            />
+            <link
+               href="/icons/favicon-32x32.png"
+               rel="icon"
+               type="image/png"
+               sizes="32x32"
+            />
+            <link rel="apple-touch-icon" href="/icons/apple-touch-icon"></link>
             <meta name="theme-color" content="#111" />
          </Head>
          <Component {...pageProps} />
