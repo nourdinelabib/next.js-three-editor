@@ -157,11 +157,11 @@ const ThreeEditor = () => {
 
       // ServiceWorker
 
-      if ('serviceWorker' in navigator) {
-         try {
-            navigator.serviceWorker.register('sw.js');
-         } catch (error) {}
-      }
+      // if ('serviceWorker' in navigator) {
+      //    try {
+      //       navigator.serviceWorker.register('sw.js');
+      //    } catch (error) {}
+      // }
    });
 };
 
