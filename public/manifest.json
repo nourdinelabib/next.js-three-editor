@@ -1,14 +1,18 @@
 {
    "name": "Three.js Editor",
    "short_name": "Three.js",
-   "start_url": ".",
-   "scope": ".",
-   "display": "standalone",
+   "theme_color": "#ffffff",
+   "background_color": "#004740",
+   "display": "fullscreen",
+   "orientation": "portrait",
+   "scope": "/",
+   "start_url": "/",
    "icons": [
       {
          "src": "images/icon.png",
          "type": "image/png",
          "sizes": "144x144"
       }
-   ]
+   ],
+   "splash_pages": null
 }
