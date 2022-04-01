@@ -163,8 +163,6 @@ const ThreeEditor = () => {
          } catch (error) {}
       }
    });
-
-   return <div>ThreeEditor</div>;
 };
 
 export default ThreeEditor;
