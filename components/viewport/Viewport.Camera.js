@@ -1,4 +1,4 @@
-import { UISelect } from '../../libs/ui.js';
+import { UISelect } from '../../public/libs/ui.js';
 
 function ViewportCamera(editor) {
    const signals = editor.signals;

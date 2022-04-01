@@ -5,7 +5,7 @@ import {
    UIText,
    UIListbox,
    UIButton,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 import { SetMaterialCommand } from '../../commands/SetMaterialCommand.js';
 

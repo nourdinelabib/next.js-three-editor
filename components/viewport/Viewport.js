@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
 
-import { UIPanel } from '../../libs/ui.js';
+import { UIPanel } from '../../public/libs/ui.js';
 
 import { EditorControls } from './EditorControls.js';
 

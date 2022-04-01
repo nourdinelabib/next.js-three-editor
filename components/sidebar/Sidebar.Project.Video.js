@@ -6,9 +6,9 @@ import {
    UIProgress,
    UIRow,
    UIText,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
-import { APP } from '../../libs/app.js';
+import { APP } from '../../public/libs/app.js';
 
 function SidebarProjectVideo(editor) {
    const strings = editor.strings;

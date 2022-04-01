@@ -1,4 +1,4 @@
-import { UIPanel, UIButton, UICheckbox } from '../../libs/ui.js';
+import { UIPanel, UIButton, UICheckbox } from '../../public/libs/ui.js';
 
 function Toolbar(editor) {
    const signals = editor.signals;

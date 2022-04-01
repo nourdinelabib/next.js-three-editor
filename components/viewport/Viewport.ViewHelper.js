@@ -1,4 +1,4 @@
-import { UIPanel } from '../../libs/ui.js';
+import { UIPanel } from '../../public/libs/ui.js';
 
 import { ViewHelper as ViewHelperBase } from 'three/examples/jsm/helpers/ViewHelper.js';
 

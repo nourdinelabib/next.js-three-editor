@@ -13,7 +13,7 @@ import {
    UIText,
    UINumber,
 } from './ui.js';
-import { MoveObjectCommand } from '../commands/MoveObjectCommand.js';
+import { MoveObjectCommand } from '../../commands/MoveObjectCommand.js';
 
 class UITexture extends UISpan {
    constructor(mapping) {

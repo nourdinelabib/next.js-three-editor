@@ -6,7 +6,7 @@ import {
    UIText,
    UINumber,
    UIRow,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 function SidebarAnimation(editor) {
    const strings = editor.strings;

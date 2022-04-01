@@ -5,7 +5,7 @@ import {
    UICheckbox,
    UIText,
    UISpan,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 /* import { SidebarProjectMaterials } from './Sidebar.Project.Materials.js'; */
 import { SidebarProjectRenderer } from './Sidebar.Project.Renderer.js';

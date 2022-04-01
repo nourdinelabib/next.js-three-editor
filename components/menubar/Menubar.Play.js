@@ -1,4 +1,4 @@
-import { UIPanel } from '../../libs/ui.js';
+import { UIPanel } from '../../public/libs/ui.js';
 
 function MenubarPlay(editor) {
    const signals = editor.signals;

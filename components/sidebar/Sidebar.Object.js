@@ -11,8 +11,8 @@ import {
    UITextArea,
    UIText,
    UINumber,
-} from '../../libs/ui.js';
-import { UIBoolean } from '../../libs/ui.three.js';
+} from '../../public/libs/ui.js';
+import { UIBoolean } from '../../public/libs/ui.three.js';
 
 import { SetUuidCommand } from '../../commands/SetUuidCommand.js';
 import { SetValueCommand } from '../../commands/SetValueCommand.js';

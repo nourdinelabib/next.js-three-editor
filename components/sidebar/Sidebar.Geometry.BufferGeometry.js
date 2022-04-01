@@ -1,4 +1,4 @@
-import { UIRow, UIText, UISpan, UIBreak } from '../../libs/ui.js';
+import { UIRow, UIText, UISpan, UIBreak } from '../../public/libs/ui.js';
 
 function SidebarGeometryBufferGeometry(editor) {
    const strings = editor.strings;

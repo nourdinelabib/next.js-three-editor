@@ -5,7 +5,7 @@ import {
    UIInteger,
    UICheckbox,
    UINumber,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 import { TeapotGeometry } from 'three/examples/jsm/geometries/TeapotGeometry.js';
 

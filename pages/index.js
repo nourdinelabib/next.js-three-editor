@@ -1,5 +1,10 @@
-import ThreeEditor from '../components/ThreeEditor';
 import Script from 'next/script';
+
+import dynamic from 'next/dynamic';
+
+const ThreeEditor = dynamic(() => import('../components/ThreeEditor'), {
+   ssr: false,
+});
 
 export default function Home() {
    return (
@@ -7,36 +12,54 @@ export default function Home() {
          <Script
             src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.6/dist/ffmpeg.min.js"
             defer
+            strategy="beforeInteractive"
          />
 
-         <Script src="../examples/js/libs/draco/draco_encoder.js" />
+         <Script
+            src="libs/codemirror/codemirror.js"
+            strategy="beforeInteractive"
+         />
+         <Script src="libs/codemirror/mode/javaScript.js" />
+         <Script src="libs/codemirror/mode/glsl.js" />
 
-         <Script src="js/libs/codemirror/codemirror.js" />
-         <Script src="js/libs/codemirror/mode/javaScript.js" />
-         <Script src="js/libs/codemirror/mode/glsl.js" />
+         <Script src="libs/esprima.js" strategy="beforeInteractive" />
+         <Script src="libs/jsonlint.js" strategy="beforeInteractive" />
 
-         <Script src="js/libs/esprima.js" />
-         <Script src="js/libs/jsonlint.js" />
-
-         <Script src="js/libs/codemirror/addon/dialog.js" />
-         <Script src="js/libs/codemirror/addon/show-hint.js" />
-         <Script src="js/libs/codemirror/addon/tern.js" />
-         <Script src="js/libs/acorn/acorn.js" />
-         <Script src="js/libs/acorn/acorn_loose.js" />
-         <Script src="js/libs/acorn/walk.js" />
-         <Script src="js/libs/ternjs/polyfill.js" />
-         <Script src="js/libs/ternjs/signal.js" />
-         <Script src="js/libs/ternjs/tern.js" />
-         <Script src="js/libs/ternjs/def.js" />
-         <Script src="js/libs/ternjs/comment.js" />
-         <Script src="js/libs/ternjs/infer.js" />
-         <Script src="js/libs/ternjs/doc_comment.js" />
-         <Script src="js/libs/tern-threejs/threejs.js" />
-         <Script src="js/libs/signals.min.js" />
+         <Script
+            src="libs/codemirror/addon/dialog.js"
+            strategy="beforeInteractive"
+         />
+         <Script
+            src="libs/codemirror/addon/show-hint.js"
+            strategy="beforeInteractive"
+         />
+         <Script
+            src="libs/codemirror/addon/tern.js"
+            strategy="beforeInteractive"
+         />
+         <Script src="libs/acorn/acorn.js" strategy="beforeInteractive" />
+         <Script src="libs/acorn/acorn_loose.js" strategy="beforeInteractive" />
+         <Script src="libs/acorn/walk.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/polyfill.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/signal.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/tern.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/def.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/comment.js" strategy="beforeInteractive" />
+         <Script src="libs/ternjs/infer.js" strategy="beforeInteractive" />
+         <Script
+            src="libs/ternjs/doc_comment.js"
+            strategy="beforeInteractive"
+         />
+         <Script
+            src="libs/tern-threejs/threejs.js"
+            strategy="beforeInteractive"
+         />
+         <Script src="libs/signals.min.js" strategy="beforeInteractive" />
 
          <Script
             async
             src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
+            strategy="beforeInteractive"
          />
 
          <ThreeEditor />

@@ -1,4 +1,4 @@
-import { UIButton, UIRow, UIText } from '../../libs/ui.js';
+import { UIButton, UIRow, UIText } from '../../public/libs/ui.js';
 
 function SidebarMaterialProgram(editor, property) {
    const signals = editor.signals;

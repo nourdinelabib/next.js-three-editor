@@ -1,5 +1,5 @@
-import { UIPanel } from '../../libs/ui.js';
-import { APP } from '../../libs/app.js';
+import { UIPanel } from '../../public/libs/ui.js';
+import { APP } from '../../public/libs/app.js';
 
 function Player(editor) {
    const signals = editor.signals;

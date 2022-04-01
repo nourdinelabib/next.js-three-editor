@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { zipSync, strToU8 } from 'three/examples/jsm/libs/fflate.module.js';
 
-import { UIPanel, UIRow, UIHorizontalRule } from '../../libs/ui.js';
+import { UIPanel, UIRow, UIHorizontalRule } from '../../public/libs/ui.js';
 
 function MenubarFile(editor) {
    const config = editor.config;

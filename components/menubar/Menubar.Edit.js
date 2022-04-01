@@ -1,6 +1,6 @@
 import { Box3, Vector3 } from 'three';
 
-import { UIPanel, UIRow, UIHorizontalRule } from '../../libs/ui.js';
+import { UIPanel, UIRow, UIHorizontalRule } from '../../public/libs/ui.js';
 
 import { AddObjectCommand } from '../../commands/AddObjectCommand.js';
 import { RemoveObjectCommand } from '../../commands/RemoveObjectCommand.js';

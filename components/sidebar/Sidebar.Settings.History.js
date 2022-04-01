@@ -1,5 +1,5 @@
-import { UIPanel, UIBreak, UIText } from '../../libs/ui.js';
-import { UIBoolean, UIOutliner } from '../../libs/ui.three.js';
+import { UIPanel, UIBreak, UIText } from '../../public/libs/ui.js';
+import { UIBoolean, UIOutliner } from '../../public/libs/ui.three.js';
 
 function SidebarSettingsHistory(editor) {
    const strings = editor.strings;

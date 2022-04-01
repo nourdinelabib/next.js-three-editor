@@ -1,4 +1,4 @@
-import { UIElement, UIPanel, UIText } from '../../libs/ui.js';
+import { UIElement, UIPanel, UIText } from '../../public/libs/ui.js';
 
 import { SetScriptValueCommand } from '../../commands/SetScriptValueCommand.js';
 import { SetMaterialValueCommand } from '../../commands/SetMaterialValueCommand.js';

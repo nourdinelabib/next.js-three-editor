@@ -1,4 +1,4 @@
-import { UIRow, UIButton } from '../../libs/ui.js';
+import { UIRow, UIButton } from '../../public/libs/ui.js';
 
 function SidebarGeometryModifiers(editor, object) {
    const signals = editor.signals;

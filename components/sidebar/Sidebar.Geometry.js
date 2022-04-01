@@ -7,7 +7,7 @@ import {
    UIInput,
    UIButton,
    UISpan,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 import { SetGeometryValueCommand } from '../../commands/SetGeometryValueCommand.js';
 

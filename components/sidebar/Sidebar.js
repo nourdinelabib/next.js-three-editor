@@ -1,4 +1,4 @@
-import { UITabbedPanel, UISpan } from '../../libs/ui.js';
+import { UITabbedPanel, UISpan } from '../../public/libs/ui.js';
 
 import { SidebarScene } from './Sidebar.Scene.js';
 import { SidebarProperties } from './Sidebar.Properties.js';

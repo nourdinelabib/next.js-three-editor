@@ -1,4 +1,4 @@
-import { UINumber, UIRow, UIText } from '../../libs/ui.js';
+import { UINumber, UIRow, UIText } from '../../public/libs/ui.js';
 import { SetMaterialValueCommand } from '../../commands/SetMaterialValueCommand.js';
 
 function SidebarMaterialNumberProperty(

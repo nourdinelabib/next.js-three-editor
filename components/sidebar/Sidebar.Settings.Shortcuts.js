@@ -1,4 +1,4 @@
-import { UIPanel, UIText, UIRow, UIInput } from '../../libs/ui.js';
+import { UIPanel, UIText, UIRow, UIInput } from '../../public/libs/ui.js';
 
 import { RemoveObjectCommand } from '../../commands/RemoveObjectCommand.js';
 

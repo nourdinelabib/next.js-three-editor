@@ -1,4 +1,4 @@
-import { UIElement } from '../../libs/ui.js';
+import { UIElement } from '../../public/libs/ui.js';
 
 function Resizer(editor) {
    const signals = editor.signals;

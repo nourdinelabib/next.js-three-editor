@@ -1,4 +1,4 @@
-import { UIColor, UINumber, UIRow, UIText } from '../../libs/ui.js';
+import { UIColor, UINumber, UIRow, UIText } from '../../public/libs/ui.js';
 import { SetMaterialColorCommand } from '../../commands/SetMaterialColorCommand.js';
 import { SetMaterialValueCommand } from '../../commands/SetMaterialValueCommand.js';
 

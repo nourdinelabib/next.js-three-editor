@@ -7,7 +7,7 @@ import {
    UIRow,
    UISelect,
    UIText,
-} from '../../libs/ui.js';
+} from '../../public/libs/ui.js';
 
 import { SetMaterialCommand } from '../../commands/SetMaterialCommand.js';
 import { SetMaterialValueCommand } from '../../commands/SetMaterialValueCommand.js';

@@ -8,8 +8,8 @@ import {
    UISelect,
    UICheckbox,
    UINumber,
-} from '../../libs/ui.js';
-import { UIPoints3 } from '../../libs/ui.three.js';
+} from '../../public/libs/ui.js';
+import { UIPoints3 } from '../../public/libs/ui.three.js';
 
 import { SetGeometryCommand } from '../../commands/SetGeometryCommand.js';
 

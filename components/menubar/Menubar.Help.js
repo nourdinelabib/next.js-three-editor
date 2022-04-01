@@ -1,4 +1,4 @@
-import { UIPanel, UIRow } from '../../libs/ui.js';
+import { UIPanel, UIRow } from '../../public/libs/ui.js';
 
 function MenubarHelp(editor) {
    const strings = editor.strings;

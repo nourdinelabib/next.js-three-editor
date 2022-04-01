@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-import { UICheckbox, UINumber, UIRow, UIText } from '../../libs/ui.js';
-import { UITexture } from '../../libs/ui.three.js';
+import { UICheckbox, UINumber, UIRow, UIText } from '../../public/libs/ui.js';
+import { UITexture } from '../../public/libs/ui.three.js';
 import { SetMaterialMapCommand } from '../../commands/SetMaterialMapCommand.js';
 import { SetMaterialValueCommand } from '../../commands/SetMaterialValueCommand.js';
 import { SetMaterialVectorCommand } from '../../commands/SetMaterialVectorCommand.js';

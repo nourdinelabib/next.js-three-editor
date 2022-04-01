@@ -8,8 +8,8 @@ import {
    UISelect,
    UIText,
    UINumber,
-} from '../../libs/ui.js';
-import { UIOutliner, UITexture } from '../../libs/ui.three.js';
+} from '../../public/libs/ui.js';
+import { UIOutliner, UITexture } from '../../public/libs/ui.three.js';
 
 function SidebarScene(editor) {
    const signals = editor.signals;

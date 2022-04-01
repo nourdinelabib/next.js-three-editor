@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import dynamic from 'next/dynamic';
 
 import * as THREE from 'three';
 import { Editor } from '../components/editor/Editor';
@@ -10,13 +9,10 @@ import { Player } from '../components/player/Player';
 import { Sidebar } from '../components/sidebar/Sidebar';
 import { Menubar } from '../components/menubar/Menubar';
 import { Resizer } from '../components/resizer/Resizer';
-//import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 
 const ThreeEditor = () => {
    useEffect(() => {
-      const { VRButton } = dynamic(() =>
-         import('three/examples/jsm/webxr/VRButton.js').then((mod) => mod.Hello)
-      );
       window.URL = window.URL || window.webkitURL;
       window.BlobBuilder =
          window.BlobBuilder ||

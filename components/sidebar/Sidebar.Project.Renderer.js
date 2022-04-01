@@ -1,7 +1,13 @@
 import * as THREE from 'three';
 
-import { UINumber, UIPanel, UIRow, UISelect, UIText } from '../../libs/ui.js';
-import { UIBoolean } from '../../libs/ui.three.js';
+import {
+   UINumber,
+   UIPanel,
+   UIRow,
+   UISelect,
+   UIText,
+} from '../../public/libs/ui.js';
+import { UIBoolean } from '../../public/libs/ui.three.js';
 
 function SidebarProjectRenderer(editor) {
    const config = editor.config;
