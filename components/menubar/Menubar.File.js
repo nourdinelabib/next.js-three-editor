@@ -403,7 +403,7 @@ function MenubarFile(editor) {
       });
 
       const loader = new THREE.FileLoader(manager);
-      loader.load('js/libs/app/index.html', function (content) {
+      loader.load('libs/app/index.html', function (content) {
          content = content.replace('<!-- title -->', title);
 
          const includes = [];
@@ -430,13 +430,13 @@ function MenubarFile(editor) {
 
          toZip['index.html'] = strToU8(content);
       });
-      loader.load('js/libs/app.js', function (content) {
+      loader.load('libs/app.js', function (content) {
          toZip['js/app.js'] = strToU8(content);
       });
-      loader.load('../build/three.module.js', function (content) {
+      loader.load('libs/app/three.module.js', function (content) {
          toZip['js/three.module.js'] = strToU8(content);
       });
-      loader.load('../examples/jsm/webxr/VRButton.js', function (content) {
+      loader.load('libs/app/webxr/VRButton.js', function (content) {
          toZip['js/VRButton.js'] = strToU8(content);
       });
    });
