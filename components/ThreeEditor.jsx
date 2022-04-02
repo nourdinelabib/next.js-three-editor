@@ -31,26 +31,28 @@ const ThreeEditor = () => {
       window.THREE = THREE; // Expose THREE to APP Scripts and Console
       window.VRButton = VRButton; // Expose VRButton to APP Scripts
 
+      const ThreeEditor = document.getElementById('three-editor');
+
       const viewport = new Viewport(editor);
-      document.body.appendChild(viewport.dom);
+      ThreeEditor.appendChild(viewport.dom);
 
       const toolbar = new Toolbar(editor);
-      document.body.appendChild(toolbar.dom);
+      ThreeEditor.appendChild(toolbar.dom);
 
       const script = new Script(editor);
-      document.body.appendChild(script.dom);
+      ThreeEditor.appendChild(script.dom);
 
       const player = new Player(editor);
-      document.body.appendChild(player.dom);
+      ThreeEditor.appendChild(player.dom);
 
       const sidebar = new Sidebar(editor);
-      document.body.appendChild(sidebar.dom);
+      ThreeEditor.appendChild(sidebar.dom);
 
       const menubar = new Menubar(editor);
-      document.body.appendChild(menubar.dom);
+      ThreeEditor.appendChild(menubar.dom);
 
       const resizer = new Resizer(editor);
-      document.body.appendChild(resizer.dom);
+      ThreeEditor.appendChild(resizer.dom);
 
       //
 
@@ -163,6 +165,8 @@ const ThreeEditor = () => {
       //    } catch (error) {}
       // }
    });
+
+   return <div id="three-editor"></div>;
 };
 
 export default ThreeEditor;

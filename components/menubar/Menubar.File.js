@@ -37,10 +37,10 @@ function MenubarFile(editor) {
    options.add(new UIHorizontalRule());
 
    // Import
-
+   const ThreeEditor = document.getElementById('three-editor');
    const form = document.createElement('form');
    form.style.display = 'none';
-   document.body.appendChild(form);
+   ThreeEditor.appendChild(form);
 
    const fileInput = document.createElement('input');
    fileInput.multiple = true;

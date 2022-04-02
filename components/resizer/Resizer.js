@@ -25,7 +25,9 @@ function Resizer(editor) {
 
       if (event.isPrimary === false) return;
 
-      const offsetWidth = document.body.offsetWidth;
+      const ThreeEditor = document.getElementById('three-editor');
+
+      const offsetWidth = ThreeEditor.offsetWidth;
       const clientX = event.clientX;
 
       const cX =
