@@ -8,7 +8,7 @@ module.exports = withPWA({
       register: true,
       skipWaiting: true,
       disable: process.env.NODE_ENV === 'development',
-      runtimeCaching: defaultCache,
+      runtimeCaching,
       buildExcludes: [/middleware-build-manifest\.js$/],
    },
    i18n: {
