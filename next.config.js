@@ -5,14 +5,9 @@ module.exports = withPWA({
    reactStrictMode: true,
    pwa: {
       dest: 'public',
+      disable: process.env.NODE_ENV === 'development',
       register: true,
       skipWaiting: true,
-      disable: process.env.NODE_ENV === 'development',
       runtimeCaching,
-      buildExcludes: [/middleware-build-manifest\.js$/],
-   },
-   i18n: {
-      locales: ['en-US'],
-      defaultLocale: 'en-US',
    },
 });
