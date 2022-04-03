@@ -4,11 +4,10 @@ import { UIPanel, UIButton, UIDiv } from '../../public/libs/ui.js';
 import { SidebarSettingsHistory } from '../sidebar/Sidebar.Settings.History';
 
 function ToolsHistory(editor) {
-   const signals = editor.signals;
    const strings = editor.strings;
 
    const container = new UIPanel();
-   container.setId('menu');
+   container.setId('history');
 
    //* History
 
@@ -20,11 +19,6 @@ function ToolsHistory(editor) {
    historyIcon.src = 'images/history.svg';
 
    history.dom.appendChild(historyIcon);
-
-   history.onClick(function () {
-      signals.transformModeChanged.dispatch('translate');
-   });
-
    container.add(history);
 
    const options = new UIDiv();

@@ -505,7 +505,7 @@ select:hover {
    display: none;
 }
 
-#tools:hover .options {
+#tools #history:hover .options {
    display: flex;
    flex-direction: column;
 }
@@ -530,6 +530,46 @@ select:hover {
 
 #tools .options .Panel span {
    left: 0;
+}
+
+#tools #mesh:hover .options {
+   display: flex;
+   flex-direction: column;
+}
+
+#tools #mesh .options {
+   left: 32px;
+   top: 32px;
+}
+
+#tools #mesh .options .tools {
+   width: 128px;
+   flex-wrap: wrap;
+}
+
+#tools #mesh .options .tools button {
+   width: 25%;
+   min-width: 32px;
+}
+
+#tools #light:hover .options {
+   display: flex;
+   flex-direction: column;
+}
+
+#tools #light .options {
+   left: 32px;
+   top: calc(32px * 2);
+}
+
+#tools #light .options .tools {
+   width: 128px;
+   flex-wrap: wrap;
+}
+
+#tools #light .options .tools button {
+   width: 25%;
+   min-width: 32px;
 }
 
 .Outliner {
