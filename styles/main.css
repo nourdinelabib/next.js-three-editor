@@ -70,6 +70,12 @@ input {
    user-select: none;
 }
 
+.center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 .TabbedPanel {
    -moz-user-select: none;
    -webkit-user-select: none;
@@ -469,6 +475,26 @@ select:hover {
    opacity: 0.5;
 }
 
+#tools {
+   position: absolute;
+   left: 10px;
+   top: 190px;
+   width: 32px;
+   background: #eee;
+   text-align: center;
+}
+
+#tools button,
+#tools input {
+   height: 32px;
+   background: #eee;
+}
+
+#tools button img {
+   width: 16px;
+   opacity: 0.5;
+}
+
 .Outliner {
    color: #444;
    background-color: #fff;
@@ -652,6 +678,15 @@ select:hover {
    }
 
    #toolbar img {
+      filter: invert(1);
+   }
+
+   #tools button,
+   #tools input {
+      background-color: #111;
+   }
+
+   #tools img {
       filter: invert(1);
    }
 

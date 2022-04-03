@@ -8,6 +8,7 @@ import { Script } from '../components/script/Script';
 import { Player } from '../components/player/Player';
 import { Sidebar } from '../components/sidebar/Sidebar';
 import { Menubar } from '../components/menubar/Menubar';
+import { Tools } from '../components/tools/Tools';
 import { Resizer } from '../components/resizer/Resizer';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 
@@ -47,6 +48,9 @@ const ThreeEditor = () => {
 
       const sidebar = new Sidebar(editor);
       ThreeEditor.appendChild(sidebar.dom);
+
+      const tools = new Tools(editor);
+      ThreeEditor.appendChild(tools.dom);
 
       const menubar = new Menubar(editor);
       ThreeEditor.appendChild(menubar.dom);
