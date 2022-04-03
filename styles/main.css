@@ -495,6 +495,40 @@ select:hover {
    opacity: 0.5;
 }
 
+#tools .options {
+   background-color: transparent;
+   position: absolute;
+   left: 32px;
+   top: 0px;
+
+   padding: 0 5px;
+   display: none;
+}
+
+#tools:hover .options {
+   display: flex;
+   flex-direction: column;
+}
+
+#tools .options .tools {
+   padding: 0 15px;
+   background-color: #111;
+   display: flex;
+   gap: 20px;
+}
+
+#tools .options .tools button {
+   width: 50px;
+}
+
+#tools .options .Panel {
+   background-color: #111;
+}
+
+#tools .options .Panel span {
+   left: 0;
+}
+
 .Outliner {
    color: #444;
    background-color: #fff;

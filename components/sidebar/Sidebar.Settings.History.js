@@ -1,7 +1,7 @@
 import { UIPanel, UIBreak, UIText } from '../../public/libs/ui.js';
 import { UIBoolean, UIOutliner } from '../../public/libs/ui.three.js';
 
-function SidebarSettingsHistory(editor) {
+function SidebarSettingsHistory(editor, Slidbar = true) {
    const strings = editor.strings;
 
    const signals = editor.signals;
@@ -12,7 +12,11 @@ function SidebarSettingsHistory(editor) {
 
    const container = new UIPanel();
 
-   container.add(new UIText(strings.getKey('sidebar/history').toUpperCase()));
+   if (Slidbar) {
+      container.add(
+         new UIText(strings.getKey('sidebar/history').toUpperCase())
+      );
+   }
 
    //
 
