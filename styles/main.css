@@ -511,18 +511,21 @@ select:hover {
 }
 
 #tools .options .tools {
-   padding: 0 15px;
-   background-color: #111;
+   background-color: #eee;
    display: flex;
-   gap: 20px;
 }
 
 #tools .options .tools button {
-   width: 50px;
+   width: 50%;
+   min-width: 85px;
+}
+
+#tools .options .tools button:hover {
+   background-color: #08f;
 }
 
 #tools .options .Panel {
-   background-color: #111;
+   background-color: #eee;
 }
 
 #tools .options .Panel span {
@@ -679,6 +682,14 @@ select:hover {
 
    #menubar .menu .options .inactive {
       color: #444;
+   }
+
+   #tools .options .tools {
+      background-color: #111;
+   }
+
+   #tools .options .Panel {
+      background-color: #111;
    }
 
    #sidebar {
