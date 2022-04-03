@@ -572,6 +572,26 @@ select:hover {
    min-width: 32px;
 }
 
+#tools #camera:hover .options {
+   display: flex;
+   flex-direction: column;
+}
+
+#tools #camera .options {
+   left: 32px;
+   top: calc(32px * 3);
+}
+
+#tools #camera .options .tools {
+   width: 64px;
+   flex-wrap: wrap;
+}
+
+#tools #camera .options .tools button {
+   width: 25%;
+   min-width: 32px;
+}
+
 .Outliner {
    color: #444;
    background-color: #fff;
