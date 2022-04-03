@@ -11,15 +11,15 @@ function Light(editor) {
 
    //* Light
 
-   const history = new UIButton();
-   history.addClass('center');
+   const light = new UIButton();
+   light.addClass('center');
 
-   const historyIcon = document.createElement('img');
-   historyIcon.alt = strings.getKey('light');
-   historyIcon.src = 'images/light.svg';
+   const lightIcon = document.createElement('img');
+   lightIcon.alt = strings.getKey('light');
+   lightIcon.src = 'images/light.svg';
 
-   history.dom.appendChild(historyIcon);
-   container.add(history);
+   light.dom.appendChild(lightIcon);
+   container.add(light);
 
    const options = new UIDiv();
    options.setClass('options');

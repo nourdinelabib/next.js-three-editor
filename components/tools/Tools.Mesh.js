@@ -12,15 +12,15 @@ function Mesh(editor) {
 
    //* Mesh
 
-   const history = new UIButton();
-   history.addClass('center');
+   const mesh = new UIButton();
+   mesh.addClass('center');
 
-   const historyIcon = document.createElement('img');
-   historyIcon.alt = strings.getKey('mesh');
-   historyIcon.src = 'images/mesh.svg';
+   const meshIcon = document.createElement('img');
+   meshIcon.alt = strings.getKey('mesh');
+   meshIcon.src = 'images/mesh.svg';
 
-   history.dom.appendChild(historyIcon);
-   container.add(history);
+   mesh.dom.appendChild(meshIcon);
+   container.add(mesh);
 
    const options = new UIDiv();
    options.setClass('options');

@@ -11,15 +11,15 @@ function Camera(editor) {
 
    //* Camera
 
-   const history = new UIButton();
-   history.addClass('center');
+   const camera = new UIButton();
+   camera.addClass('center');
 
-   const historyIcon = document.createElement('img');
-   historyIcon.alt = strings.getKey('camera');
-   historyIcon.src = 'images/camera.svg';
+   const cameraIcon = document.createElement('img');
+   cameraIcon.alt = strings.getKey('camera');
+   cameraIcon.src = 'images/camera.svg';
 
-   history.dom.appendChild(historyIcon);
-   container.add(history);
+   camera.dom.appendChild(cameraIcon);
+   container.add(camera);
 
    const options = new UIDiv();
    options.setClass('options');
