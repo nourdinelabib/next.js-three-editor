@@ -25,7 +25,7 @@ function ContinuousLines(editor) {
    let active = false;
 
    let MAX_POINTS = 500;
-   let mouse = [];
+   let mouse = new THREE.Vector3();
 
    // geometry
    const geometry = new THREE.BufferGeometry();
@@ -35,17 +35,17 @@ function ContinuousLines(editor) {
    geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
 
    // draw range
-   let drawCount = 2; // draw the first 2 points, only
+   let drawCount = 1; // draw the first 2 points, only
    geometry.setDrawRange(0, drawCount);
 
    // material
    var material = new THREE.LineBasicMaterial({
-      color: 0xff0000,
+      color: 0xffffff,
       linewidth: 1,
    });
 
    // line
-   const line = new THREE.Line(geometry, material);
+   let line = new THREE.Line(geometry, material);
    line.name = 'Track';
 
    positions = line.geometry.attributes.position.array;
@@ -57,9 +57,9 @@ function ContinuousLines(editor) {
 
    lines.onClick(function () {
       if (!active) {
+         editor.execute(new AddObjectCommand(editor, line));
          active = true;
          lines.addClass('selected');
-         editor.execute(new AddObjectCommand(editor, line));
 
          document.addEventListener('mousemove', onMouseMove);
 
@@ -67,6 +67,7 @@ function ContinuousLines(editor) {
       } else {
          active = false;
          lines.removeClass('selected');
+
          document.removeEventListener('mousemove', onMouseMove);
          document.removeEventListener('mousedown', addPoint);
       }
@@ -74,17 +75,17 @@ function ContinuousLines(editor) {
 
    // update line
    function updateLine() {
-      positions[drawCount * 3 - 3] = mouse.x;
-      positions[drawCount * 3 - 2] = mouse.y;
-      positions[drawCount * 3 - 1] = mouse.z;
-      line.geometry.attributes.position.needsUpdate = true;
+      positions[index * 3 - 3] = mouse.x;
+      positions[index * 3 - 2] = mouse.y;
+      positions[index * 3 - 1] = mouse.z;
       editor.execute(new AddObjectCommand(editor, line));
+      line.geometry.attributes.position.needsUpdate = true;
    }
 
    // mouse move handler
    function onMouseMove(event) {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (event.clientX / window.innerWidth) * 4 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 4 + 1;
       mouse.z = 0;
       //mouse.unproject(camera);
       if (drawCount !== 0) {
@@ -94,94 +95,13 @@ function ContinuousLines(editor) {
 
    // add point
    function addPoint() {
-      positions[index++] = x;
-      positions[index++] = y;
-      positions[index++] = z;
-
-      x += (Math.random() - 0.5) * 30;
-      y += (Math.random() - 0.5) * 30;
-      z += (Math.random() - 0.5) * 30;
-      drawCount++;
-      line.geometry.setDrawRange(0, drawCount);
+      positions[index * 3 + 0] = mouse.x;
+      positions[index * 3 + 1] = mouse.y;
+      positions[index * 3 + 2] = mouse.z;
+      index++;
+      line.geometry.setDrawRange(0, index);
       updateLine();
    }
-
-   // container.onClick(function () {
-   //    let MAX_POINTS = 500;
-
-   //    // geometry
-   //    const geometry = new THREE.BufferGeometry();
-
-   //    // attributes
-   //    let positions = new Float32Array(MAX_POINTS * 3); // 3 vertices per point
-   //    geometry.addAttribute(
-   //       'position',
-   //       new THREE.BufferAttribute(positions, 3)
-   //    );
-
-   //    // draw range
-   //    const drawCount = 2; // draw the first 2 points, only
-   //    geometry.setDrawRange(0, drawCount);
-
-   //    // material
-   //    var material = new THREE.LineBasicMaterial({
-   //       color: 0xff0000,
-   //       linewidth: 1,
-   //    });
-
-   //    // line
-   //    const line = new THREE.Line(geometry, material);
-   //    line.name = 'Track';
-
-   //    positions = line.geometry.attributes.position.array;
-
-   //    let x = 0;
-   //    let y = 0;
-   //    let z = 0;
-   //    let index = 0;
-
-   //    for (let i = 0, l = MAX_POINTS; i < l; i++) {
-   //       positions[index++] = x;
-   //       positions[index++] = y;
-   //       positions[index++] = z;
-
-   //       x += (Math.random() - 0.5) * 30;
-   //       y += (Math.random() - 0.5) * 30;
-   //       z += (Math.random() - 0.5) * 30;
-   //    }
-   //    line.geometry.setDrawRange(0, 2);
-
-   //    editor.execute(new AddObjectCommand(editor, line));
-   // });
-
-   // // update line
-   // function updateLine() {
-   //    positions[count * 3 - 3] = mouse.x;
-   //    positions[count * 3 - 2] = mouse.y;
-   //    positions[count * 3 - 1] = mouse.z;
-   //    line.geometry.attributes.position.needsUpdate = true;
-   // }
-
-   // // mouse move handler
-   // function onMouseMove(event) {
-   //    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-   //    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-   //    mouse.z = 0;
-   //    mouse.unproject(camera);
-   //    if (count !== 0) {
-   //       updateLine();
-   //    }
-   // }
-
-   // // add point
-   // function addPoint(event) {
-   //    positions[count * 3 + 0] = mouse.x;
-   //    positions[count * 3 + 1] = mouse.y;
-   //    positions[count * 3 + 2] = mouse.z;
-   //    count++;
-   //    line.geometry.setDrawRange(0, count);
-   //    updateLine();
-   // }
 
    container.add(lines);
 
