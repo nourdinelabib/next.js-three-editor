@@ -520,6 +520,11 @@ select:hover {
    min-width: 85px;
 }
 
+#tools button.selected {
+   color: #fff;
+   background-color: #08f;
+}
+
 #tools .options .tools button:hover {
    background-color: #08f;
 }

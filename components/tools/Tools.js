@@ -5,6 +5,7 @@ import { Mesh } from './Tools.Mesh.js';
 import { Light } from './Tools.Light.js';
 import { Camera } from './Tools.Camera.js';
 import { Clone } from './Tools.Clone.js';
+import { ContinuousLines } from './Tools.ContinuousLines';
 
 function Tools(editor) {
    const container = new UIPanel();
@@ -14,6 +15,7 @@ function Tools(editor) {
    container.add(new Mesh(editor));
    container.add(new Light(editor));
    container.add(new Camera(editor));
+   container.add(new ContinuousLines(editor));
    container.add(new Clone(editor));
 
    return container;
