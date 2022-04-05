@@ -6,6 +6,7 @@ function ViewportCamera(editor) {
    //
 
    const cameraSelect = new UISelect();
+   cameraSelect.setId('select-camera');
    cameraSelect.setPosition('absolute');
    cameraSelect.setRight('10px');
    cameraSelect.setTop('10px');

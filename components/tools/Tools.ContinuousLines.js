@@ -12,6 +12,10 @@ function ContinuousLines(editor) {
    const container = new UIPanel();
    container.setId('lines');
 
+   container.dom.addEventListener('mousedown', (e) => {
+      e.stopPropagation();
+   });
+
    //* lines
 
    const lines = new UIButton();
@@ -62,26 +66,26 @@ function ContinuousLines(editor) {
    // Camera
    const aspect = editor.camera.aspect;
    const camera = new THREE.OrthographicCamera(-aspect, aspect);
-   camera.name = 'Track Camera';
+   camera.name = 'Drowing Camera';
    camera.position.set(0, 0, 1);
+
+   editor.viewportCamera = editor.camera;
 
    lines.onClick(function () {
       if (!active) {
-         editor.execute(new AddObjectCommand(editor, line));
          active = true;
          lines.addClass('selected');
+         document.addEventListener('mousemove', onMouseMove, false);
+         document.addEventListener('mousedown', addPoint, false);
 
-         document.addEventListener('mousemove', onMouseMove);
-         document.addEventListener('mousedown', addPoint);
-
-         editor.execute(new AddObjectCommand(editor, camera));
+         editor.viewportCamera = camera;
       } else {
          active = false;
          lines.removeClass('selected');
+         document.removeEventListener('mousemove', onMouseMove, false);
+         document.removeEventListener('mousedown', addPoint, false);
 
-         document.removeEventListener('mousemove', onMouseMove);
-         document.removeEventListener('mousedown', addPoint);
-         editor.execute(new RemoveObjectCommand(editor, camera));
+         editor.viewportCamera = editor.camera;
       }
    });
 
@@ -96,8 +100,8 @@ function ContinuousLines(editor) {
 
    // mouse move handler
    function onMouseMove(event) {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (event.clientX / viewport.offsetWidth) * 2 - 1;
+      mouse.y = -(event.clientY / viewport.offsetHeight) * 2 + 1;
       mouse.z = 0;
       //mouse.unproject(camera);
       if (drawCount !== 0) {
