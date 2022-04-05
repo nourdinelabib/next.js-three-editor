@@ -2,6 +2,7 @@ import * as THREE from 'three';
 
 import { UIPanel, UIButton } from '../../public/libs/ui.js';
 import { AddObjectCommand } from '../../commands/AddObjectCommand.js';
+import { RemoveObjectCommand } from '../../commands/RemoveObjectCommand.js';
 
 function ContinuousLines(editor) {
    const strings = editor.strings;
@@ -25,23 +26,26 @@ function ContinuousLines(editor) {
    let active = false;
 
    let MAX_POINTS = 500;
-   let mouse = new THREE.Vector3();
+   const mouse = new THREE.Vector2();
 
    // geometry
    const geometry = new THREE.BufferGeometry();
 
    // attributes
    let positions = new Float32Array(MAX_POINTS * 3); // 3 vertices per point
-   geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
+   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
    // draw range
-   let drawCount = 1; // draw the first 2 points, only
+   let drawCount = 2; // draw the first 2 points, only
    geometry.setDrawRange(0, drawCount);
 
    // material
    var material = new THREE.LineBasicMaterial({
-      color: 0xffffff,
-      linewidth: 1,
+      color: 0xff0000,
+      side: THREE.DoubleSide,
+      wireframe: true,
+      // depthTest: false,
+      blending: THREE.NormalBlending,
    });
 
    // line
@@ -55,6 +59,12 @@ function ContinuousLines(editor) {
    let z = 0;
    let index = 0;
 
+   // Camera
+   const aspect = editor.camera.aspect;
+   const camera = new THREE.OrthographicCamera(-aspect, aspect);
+   camera.name = 'Track Camera';
+   camera.position.set(0, 0, 1);
+
    lines.onClick(function () {
       if (!active) {
          editor.execute(new AddObjectCommand(editor, line));
@@ -62,14 +72,16 @@ function ContinuousLines(editor) {
          lines.addClass('selected');
 
          document.addEventListener('mousemove', onMouseMove);
-
          document.addEventListener('mousedown', addPoint);
+
+         editor.execute(new AddObjectCommand(editor, camera));
       } else {
          active = false;
          lines.removeClass('selected');
 
          document.removeEventListener('mousemove', onMouseMove);
          document.removeEventListener('mousedown', addPoint);
+         editor.execute(new RemoveObjectCommand(editor, camera));
       }
    });
 
@@ -84,8 +96,8 @@ function ContinuousLines(editor) {
 
    // mouse move handler
    function onMouseMove(event) {
-      mouse.x = (event.clientX / window.innerWidth) * 4 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 4 + 1;
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
       mouse.z = 0;
       //mouse.unproject(camera);
       if (drawCount !== 0) {
