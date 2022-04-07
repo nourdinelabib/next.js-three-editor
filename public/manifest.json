@@ -45,5 +45,6 @@
          "purpose": "any maskable"
       }
    ],
-   "splash_pages": null
+   "splash_pages": null,
+   "prefer_related_applications": false
 }
